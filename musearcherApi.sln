@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32120.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "musearcherApi", "musearcherApi\musearcherApi.csproj", "{E5CCFC1A-2481-4F92-B22C-3B9399219DBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5CCFC1A-2481-4F92-B22C-3B9399219DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CCFC1A-2481-4F92-B22C-3B9399219DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CCFC1A-2481-4F92-B22C-3B9399219DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CCFC1A-2481-4F92-B22C-3B9399219DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32A562AA-4DAC-41E7-B736-A5472C3E41CA}
+	EndGlobalSection
+EndGlobal
