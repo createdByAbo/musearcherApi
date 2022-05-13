@@ -18,4 +18,9 @@ app.MapGet("/", () =>
     return $"/";
 });
 
+app.MapGet("/song", () => 
+{
+    return musearcherApi.httpClient.Get("https://api.genius.com/search?q=Kendrick%20Lamar");
+});
+
 app.Run();
