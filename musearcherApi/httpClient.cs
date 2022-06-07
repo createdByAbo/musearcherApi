@@ -4,7 +4,7 @@
     using dotenv.net.Utilities;
     public class httpClient
     {
-        static readonly HttpClient client = new HttpClient();
+        static readonly HttpClient Client = new HttpClient();
 
         public static async Task<String> Get(string link)
         {
@@ -14,7 +14,7 @@
                 string apiKey = EnvReader.GetStringValue("apiKey").Replace(" ", "");
                 string url = $"{link}&access_token={apiKey}";
                 Console.WriteLine(url);
-                HttpResponseMessage response = await client.GetAsync(url);
+                HttpResponseMessage response = await Client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
 
