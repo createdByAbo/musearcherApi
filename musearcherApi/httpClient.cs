@@ -25,7 +25,7 @@
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);
 
-                return $"error requesting api / Message {e.Message}";
+                return $"error requesting api / Message : {e.Message}";
             }
         }
     }
