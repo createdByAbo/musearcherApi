@@ -18,9 +18,9 @@ app.MapGet("/", () =>
     return $"/";
 });
 
-app.MapGet("/song", () => 
+app.MapGet("/song", () =>
 {
-    return musearcherApi.httpClient.Get("https://api.genius.com/search?q=Kendrick%20Lamar");
+    return musearcherApi.convert.getValueFromJson((musearcherApi.httpClient.Get("https://api.genius.com/search?q=pliki%20pliki").Result).ToString());
 });
 
 app.Run();
