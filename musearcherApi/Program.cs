@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
 
 if (app.Environment.IsDevelopment())
 {
@@ -18,9 +21,10 @@ app.MapGet("/", () =>
     return $"/";
 });
 
-app.MapGet("/song", () =>
+app.MapGet("/song", ([FromQuery] string lirycs) =>
 {
-    return musearcherApi.convert.getValueFromJson((musearcherApi.httpClient.Get("https://api.genius.com/search?q=pliki%20pliki").Result).ToString());
+    Console.WriteLine(lirycs);
+    return musearcherApi.convert.getValueFromJson((musearcherApi.httpClient.Get($"https://api.genius.com/search?q={lirycs}").Result).ToString());
 });
 
 app.Run();

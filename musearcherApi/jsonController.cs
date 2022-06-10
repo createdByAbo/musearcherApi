@@ -9,10 +9,10 @@
 
     public class convert
     {
-        public static string getValueFromJson(string json)
+        public static Welcome getValueFromJson(string json)
         {
             Welcome response = JsonConvert.DeserializeObject<Welcome>(json);
-            return response.Response.Hits[0].Result.ArtistNames;
+            return response;
         }
     }
 
