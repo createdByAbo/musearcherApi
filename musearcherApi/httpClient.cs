@@ -17,7 +17,7 @@
                 HttpResponseMessage response = await Client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-
+                
                 return responseBody;
             }
             catch (HttpRequestException e)
