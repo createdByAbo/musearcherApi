@@ -29,7 +29,6 @@ app.MapGet("/song", ([FromQuery] string lirycs) =>
     Console.WriteLine(lirycs);
     Welcome json = convert.getValueFromJson((musearcherApi.httpClient.Get($"https://api.genius.com/search?q={lirycs}").Result).ToString());
 
-    //Model Response = new Model.HttpRes.CreateResponse(successful, json.Response.Hits[0].Result.Stats.Hot.ToString(), json.Response.Hits[0].Result.Title.ToString(), json.Response.Hits[0].Result.ArtistNames.ToString(), json.Response.Hits[0].Result.Url.ToString(), json.Response.Hits[0].Result.SongArtImageUrl.ToString(), json.Response.Hits[0].Result.ReleaseDateForDisplay.ToString());Console.WriteLine($"model : ");
     return Model.Response.createJsonResponse(json);
 });
 
