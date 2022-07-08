@@ -12,7 +12,7 @@
             {
                 DotEnv.Load();
                 string apiKey = EnvReader.GetStringValue("apiKey").Replace(" ", "");
-                string url = $"{link}&access_token={apiKey}";
+                string url = $"{link.Replace(" ", "%20")}&access_token={apiKey}";
                 Console.WriteLine(url);
                 HttpResponseMessage response = await Client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
