@@ -6,7 +6,7 @@
     {
         static readonly HttpClient Client = new HttpClient();
 
-        public static async Task<String> Get(string link)
+        public static async Task<string> Get(string link)
         {
             try
             {

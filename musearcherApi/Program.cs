@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using musearcherApi;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +26,8 @@ app.MapGet("/", () =>
 app.MapGet("/song", ([FromQuery] string lirycs) =>
 {
     Console.WriteLine(lirycs);
-    return musearcherApi.convert.getValueFromJson((musearcherApi.httpClient.Get($"https://api.genius.com/search?q={lirycs}").Result).ToString());
+    Welcome json = convert.getValueFromJson((musearcherApi.httpClient.Get($"https://api.genius.com/search?q={lirycs}").Result).ToString());
+    return json;
 });
 
 app.Run();
