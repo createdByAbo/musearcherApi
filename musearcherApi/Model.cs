@@ -13,6 +13,8 @@ public class Model
         public Uri? SongUrl { get; set; }
         public Uri? ThumbUrl { get; set; }
         public string? ReleseDate { get; set; }
+        public string? SpotifyUrl { get; set; }
+        public string? YoutubeUrl { get; set; }
 
         public static string createJsonResponse(Welcome rawJson)
         {
@@ -26,7 +28,7 @@ public class Model
                 response.Author = rawJson.Response.Hits[0].Result.ArtistNames;
                 response.SongUrl = rawJson.Response.Hits[0].Result.Url;
                 response.ThumbUrl = rawJson.Response.Hits[0].Result.SongArtImageThumbnailUrl;
-                response.ReleseDate = rawJson.Response.Hits[0].Result.ReleaseDateForDisplay;  
+                response.ReleseDate = rawJson.Response.Hits[0].Result.ReleaseDateForDisplay;
             }
             else
             {

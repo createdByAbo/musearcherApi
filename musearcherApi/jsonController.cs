@@ -9,11 +9,11 @@
 
     public class convert
     {
-        public static Welcome getValueFromJson(string json)
+        public static Welcome getValueFromGeniusJson(string json)
         {
             Welcome response = JsonConvert.DeserializeObject<Welcome>(json);
             return response; 
-        }         
+        }
     }
 
     public partial class Welcome
