@@ -26,7 +26,7 @@ app.MapGet("/song", ([FromQuery] string lirycs) =>
 {
     Console.WriteLine(lirycs);
     Welcome json = convert.getValueFromGeniusJson((httpClient.Get($"https://api.genius.com/search?q={lirycs}", "genius").Result).ToString());
-    return Model.Response.createJsonResponse(json);
+    return Model.Response.CreateJsonResponse(json);
 });
 
 app.Run();
