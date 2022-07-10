@@ -16,7 +16,7 @@ public class Model
         public string? SpotifyUrl { get; set; }
         public string? YoutubeUrl { get; set; }
 
-        public static string createJsonResponse(Welcome rawJson)
+        public static async Task<string> createJsonResponse(Welcome rawJson)
         {
             Response response = new Response();
             
@@ -29,6 +29,10 @@ public class Model
                 response.SongUrl = rawJson.Response.Hits[0].Result.Url;
                 response.ThumbUrl = rawJson.Response.Hits[0].Result.SongArtImageThumbnailUrl;
                 response.ReleseDate = rawJson.Response.Hits[0].Result.ReleaseDateForDisplay;
+
+                var spotifyUrl = await SpotifyClient.SearchTrack(response.Author, response.Title);
+
+                response.SpotifyUrl = spotifyUrl;
             }
             else
             {
