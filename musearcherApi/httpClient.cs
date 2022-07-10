@@ -11,10 +11,7 @@
             try
             {
                 DotEnv.Load();
-                string apiKey = EnvReader.GetStringValue("apiKey").Replace(" ", "");
-                string url = $"{link.Replace(" ", "%20")}&access_token={apiKey}";
-                Console.WriteLine(url);
-                HttpResponseMessage response = await Client.GetAsync(url);
+                HttpResponseMessage response = await Client.GetAsync($"{link.Replace(" ", "%20")}&access_token={EnvReader.GetStringValue("apiKey").Replace(" ", "")}");
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 
@@ -22,9 +19,6 @@
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
-
                 return $"error requesting api / Message {e.Message}";
             }
         }
