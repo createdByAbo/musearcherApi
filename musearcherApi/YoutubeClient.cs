@@ -15,7 +15,7 @@ public static class YoutubeClient
         try
         {
             var searchListRequest = youtubeService.Search.List("snippet");
-            searchListRequest.Q = $"{author}%20{title}";
+            searchListRequest.Q = $"{author} {title}";
             searchListRequest.MaxResults = 1;
 
             var searchListResponse = await searchListRequest.ExecuteAsync();
