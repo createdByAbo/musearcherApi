@@ -19,7 +19,6 @@ public class SpotifyClient
             )
         );
 
-        Console.WriteLine(JsonConvert.SerializeObject(song));
         try
         {
             return song.Tracks.Items?[0].ExternalUrls["spotify"] ?? throw new InvalidOperationException();
