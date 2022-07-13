@@ -17,7 +17,6 @@ public class Model
         public string? ReleseDate { get; set; }
         public string? SpotifyUrl { get; set; }
         public string? YoutubeUrl { get; set; }
-        public string? SoundcloudUrl { get; set; }
 
         public static async Task<string> CreateJsonResponse(Welcome rawJson)
         {

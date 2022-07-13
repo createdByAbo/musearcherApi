@@ -15,13 +15,19 @@ public class SpotifyClient
         var spotify = new SpotifyAPI.Web.SpotifyClient(config);
         var song = await spotify.Search.Item(new SearchRequest(
             SearchRequest.Types.Track,
-            $"{title} {artist}"
+            $"{artist} - {title}"
             )
         );
+
+        Console.WriteLine(JsonConvert.SerializeObject(song));
 
         try
         {
             return song.Tracks.Items?[0].ExternalUrls["spotify"] ?? throw new InvalidOperationException();
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            return "error - ArgOutOfRangeExc";
         }
         catch (Exception e)
         {
